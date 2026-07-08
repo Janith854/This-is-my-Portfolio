@@ -827,19 +827,52 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact" class="px-6 py-24 relative">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="reveal font-mono text-xs uppercase tracking-[0.25em] text-cyan mb-3">05 · Contact</p>
-      <h2 class="reveal font-display text-3xl sm:text-4xl font-semibold mb-5">Let's build something.</h2>
-      <p class="reveal text-mute max-w-lg mx-auto mb-10">
-        I am actively looking for software engineering internship opportunities. If you have any inquiries, job
-        openings, or want to discuss a project collaboration, feel free to drop a direct email.
-      </p>
-      <a href="mailto:janithnirmal29@gmail.com"
-        class="reveal inline-flex items-center gap-2 rounded-xl px-8 py-4 bg-indigo hover:bg-indigo-dim text-white font-medium transition-colors shadow-[0_0_35px_-8px_rgba(99,102,241,0.9)]">
-        ✉️ Send Message
-      </a>
-      <p class="reveal text-mute font-mono text-sm mt-6">janithnirmal29@gmail.com</p>
+  <section id="contact" class="px-6 py-24 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Column: Details -->
+      <div class="reveal flex flex-col items-start text-left">
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6 flex items-center gap-3">
+          Contact Me <span class="inline-block animate-bounce">☎️</span>
+        </h2>
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan mb-6">
+          DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.
+        </p>
+        <a href="tel:+94773900340" class="font-display text-2xl sm:text-3xl font-bold text-ink hover:text-indigo dark:hover:text-cyan transition-colors mb-2">
+          +94 77 3900 340
+        </a>
+        <a href="mailto:janithnirmal854@gmail.com" class="font-display text-xl sm:text-2xl font-semibold text-mute hover:text-indigo dark:hover:text-cyan transition-colors mb-8 break-all">
+          janithnirmal854@gmail.com
+        </a>
+        
+        <!-- Socials -->
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/Janith854" target="_blank" rel="noopener" aria-label="GitHub"
+            class="h-11 w-11 grid place-items-center rounded-full text-white bg-[#24292e] transition-all duration-300 hover:scale-110 shadow-lg">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+          <a href="https://linkedin.com/in/janith854" target="_blank" rel="noopener" aria-label="LinkedIn"
+            class="h-11 w-11 grid place-items-center rounded-full text-white bg-[#0a66c2] transition-all duration-300 hover:scale-110 shadow-lg">
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
+          </a>
+          <a href="mailto:janithnirmal854@gmail.com" aria-label="Email"
+            class="h-11 w-11 grid place-items-center rounded-full text-white bg-[#ea4335] transition-all duration-300 hover:scale-110 shadow-lg">
+            <i class="fa-solid fa-envelope text-lg"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+            class="h-11 w-11 grid place-items-center rounded-full text-white bg-[#1877f2] transition-all duration-300 hover:scale-110 shadow-lg">
+            <i class="fa-brands fa-facebook-f text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Lottie Animation -->
+      <div class="reveal flex justify-center lg:justify-end" style="transition-delay:.1s">
+        <div class="relative w-full max-w-sm flex justify-center">
+          <div id="mailAnimation" style="width: 100%; height: 320px;"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1080,6 +1113,18 @@
           path: 'https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json'
         });
       });
+
+      // ── Mail Animation (Floating Envelope) ──
+      var mailEl = document.getElementById('mailAnimation');
+      if (mailEl) {
+        lottie.loadAnimation({
+          container: mailEl,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'https://assets5.lottiefiles.com/packages/lf20_u25cckyh.json'
+        });
+      }
     })();
 
     // Mobile menu
