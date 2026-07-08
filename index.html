@@ -80,7 +80,9 @@
       box-sizing: border-box;
     }
 
-    *, *:before, *:after {
+    *,
+    *:before,
+    *:after {
       box-sizing: inherit;
     }
 
@@ -703,8 +705,9 @@
           data-category="fullstack" style="background: var(--glass-bg); transition-delay:.12s">
 
           <!-- Image Banner -->
-          <img src="images/smartcampus.png" alt="Smart Campus Banner" class="w-full h-48 object-cover rounded-t-2xl mb-4">
-          
+          <img src="images/smartcampus.png" alt="Smart Campus Banner"
+            class="w-full h-48 object-cover rounded-t-2xl mb-4">
+
           <!-- Content -->
           <div class="flex flex-col flex-1 p-6">
             <div class="flex flex-wrap gap-2 mb-4">
@@ -734,35 +737,6 @@
           </div>
         </article>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= STATS ================= -->
-  <section class="px-6 py-12 relative">
-    <div class="max-w-6xl mx-auto glass rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-      <div class="absolute inset-0 grid-fade pointer-events-none opacity-40"></div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10 text-center">
-        <div class="reveal">
-          <div class="font-display text-4xl sm:text-5xl font-bold text-indigo dark:text-cyan mb-2 stat-val"
-            data-target="15">0</div>
-          <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-mute">Tools Mastered</p>
-        </div>
-        <div class="reveal" style="transition-delay:.05s">
-          <div class="font-display text-4xl sm:text-5xl font-bold text-indigo dark:text-cyan mb-2 stat-val"
-            data-target="12">0</div>
-          <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-mute">Projects Finished</p>
-        </div>
-        <div class="reveal" style="transition-delay:.1s">
-          <div class="font-display text-4xl sm:text-5xl font-bold text-indigo dark:text-cyan mb-2 stat-val"
-            data-target="100">0</div>
-          <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-mute">Deployment Success %</p>
-        </div>
-        <div class="reveal" style="transition-delay:.15s">
-          <div class="font-display text-4xl sm:text-5xl font-bold text-indigo dark:text-cyan mb-2 stat-val"
-            data-target="2">0</div>
-          <p class="text-xs sm:text-sm font-mono uppercase tracking-wider text-mute">Years Experience</p>
-        </div>
       </div>
     </div>
   </section>
@@ -1298,31 +1272,6 @@
         });
       });
     });
-
-    // Stats Animation Counter
-    const statsVals = document.querySelectorAll('.stat-val');
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = parseInt(entry.target.getAttribute('data-target'));
-          let count = 0;
-          const duration = 1200; // ms
-          const stepTime = Math.max(Math.floor(duration / target), 15);
-          const timer = setInterval(() => {
-            count += Math.ceil(target / (duration / stepTime));
-            if (count >= target) {
-              entry.target.textContent = target + (target === 100 ? '%' : '+');
-              clearInterval(timer);
-            } else {
-              entry.target.textContent = count + (target === 100 ? '%' : '+');
-            }
-          }, stepTime);
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    statsVals.forEach(v => statsObserver.observe(v));
 
     // Floating Go to Top Button
     const goToTopBtn = document.getElementById('goToTopBtn');
